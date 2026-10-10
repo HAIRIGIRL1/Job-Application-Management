@@ -1,1 +1,177 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Add Applicant | JAMS</title><link rel="stylesheet" href="styles.css"></head><body data-page="add"><div id="appShell"></div><main class="main"><header class="topbar"><div><span class="eyebrow">RECRUITMENT</span><h1 id="appFormHeading">Add Applicant</h1></div><div class="top-actions"><div class="avatar">AD</div><b>Admin</b></div></header><div class="breadcrumbs"><a href="index.html">Dashboard</a> / <a href="applicants.html">Applicants</a> / <span id="crumbCurrent">Add Applicant</span></div><section class="panel form-panel"><div class="panel-head"><div><h2>Applicant information</h2><p class="muted">Enter the applicant's details below. Fields marked * are required.</p></div></div><form id="applicantForm"><input type="hidden" id="recordId"><div class="form-section-title">Personal information</div><div class="form-grid"><div><label for="fullName">Full name *</label><input id="fullName" required maxlength="80" placeholder="e.g. Jordan Davis"></div><div><label for="appEmail">Email address *</label><input id="appEmail" type="email" required placeholder="name@example.com"></div><div><label for="phone">Contact number</label><input id="phone" type="tel" placeholder="09xx xxx xxxx"></div><div><label for="position">Application position *</label><select id="position" required><option value="">Select position</option><option>Web Developer</option><option>Software Developer</option><option>IT Support Specialist</option><option>UI/UX Designer</option><option>Data Analyst</option><option>HR Assistant</option><option>Other</option></select></div></div><div class="form-section-title">Education and qualifications</div><div class="form-grid"><div><label for="education">Educational background *</label><input id="education" required placeholder="e.g. BS Information Technology"></div><div><label for="school">School / institution</label><input id="school" placeholder="School or university"></div><div class="span-2"><label for="skills">Skills *</label><textarea id="skills" rows="3" required placeholder="e.g. HTML, CSS, JavaScript"></textarea></div><div class="span-2"><label for="experience">Work experience *</label><textarea id="experience" rows="3" required placeholder="Describe relevant work experience or write 'Entry-level'."></textarea></div><div><label for="status">Application status</label><select id="status"><option>Applied</option><option>Under Review</option><option>Interview</option><option>Hired</option><option>Rejected</option></select></div><div><label for="dateApplied">Date applied</label><input id="dateApplied" type="date"></div></div><div id="formMessage" class="form-message" aria-live="polite"></div><div class="form-actions"><a href="applicants.html" class="btn secondary">Cancel</a><button type="submit" class="btn primary">Save Applicant</button></div></form></section></main><script src="storage.js"></script><script src="sidebar.js"></script><script src="validation.js"></script><script src="script.js"></script></body></html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Applicant | JAMS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="add">
+
+    <div id="appShell"></div>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">RECRUITMENT</span>
+                <h1 id="appFormHeading">Add Applicant</h1>
+            </div>
+
+            <div class="top-actions">
+                <div class="avatar">AD</div>
+                <b>Admin</b>
+            </div>
+        </header>
+
+        <div class="breadcrumbs">
+            <a href="index.html">Dashboard</a> /
+            <a href="applicants.html">Applicants</a> /
+            <span id="crumbCurrent">Add Applicant</span>
+        </div>
+
+        <section class="panel form-panel">
+            <div class="panel-head">
+                <div>
+                    <h2>Applicant information</h2>
+                    <p class="muted">
+                        Enter the applicant's details below. Fields marked * are required.
+                    </p>
+                </div>
+            </div>
+
+            <form id="applicantForm">
+                <input type="hidden" id="recordId">
+
+                <div class="form-section-title">Personal information</div>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="fullName">Full name *</label>
+                        <input
+                            id="fullName"
+                            required
+                            maxlength="80"
+                            placeholder="e.g. Jordan Davis"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="appEmail">Email address *</label>
+                        <input
+                            id="appEmail"
+                            type="email"
+                            required
+                            placeholder="name@example.com"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="phone">Contact number</label>
+                        <input
+                            id="phone"
+                            type="tel"
+                            placeholder="09xx xxx xxxx"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="position">Application position *</label>
+                        <select id="position" required>
+                            <option value="">Select position</option>
+                            <option>Web Developer</option>
+                            <option>Software Developer</option>
+                            <option>IT Support Specialist</option>
+                            <option>UI/UX Designer</option>
+                            <option>Data Analyst</option>
+                            <option>HR Assistant</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-section-title">
+                    Education and qualifications
+                </div>
+
+                <div class="form-grid">
+                    <div>
+                        <label for="education">Educational background *</label>
+                        <input
+                            id="education"
+                            required
+                            placeholder="e.g. BS Information Technology"
+                        >
+                    </div>
+
+                    <div>
+                        <label for="school">School / institution</label>
+                        <input
+                            id="school"
+                            placeholder="School or university"
+                        >
+                    </div>
+
+                    <div class="span-2">
+                        <label for="skills">Skills *</label>
+                        <textarea
+                            id="skills"
+                            rows="3"
+                            required
+                            placeholder="e.g. HTML, CSS, JavaScript"
+                        ></textarea>
+                    </div>
+
+                    <div class="span-2">
+                        <label for="experience">Work experience *</label>
+                        <textarea
+                            id="experience"
+                            rows="3"
+                            required
+                            placeholder="Describe relevant work experience or write 'Entry-level'."
+                        ></textarea>
+                    </div>
+
+                    <div>
+                        <label for="status">Application status</label>
+                        <select id="status">
+                            <option>Applied</option>
+                            <option>Under Review</option>
+                            <option>Interview</option>
+                            <option>Hired</option>
+                            <option>Rejected</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="dateApplied">Date applied</label>
+                        <input id="dateApplied" type="date">
+                    </div>
+                </div>
+
+                <div
+                    id="formMessage"
+                    class="form-message"
+                    aria-live="polite"
+                ></div>
+
+                <div class="form-actions">
+                    <a href="applicants.html" class="btn secondary">
+                        Cancel
+                    </a>
+
+                    <button type="submit" class="btn primary">
+                        Save Applicant
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="validation.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
