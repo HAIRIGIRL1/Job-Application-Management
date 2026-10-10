@@ -1,0 +1,2 @@
+/* Small validation helpers shared by the pages. */
+window.JAMSValidation={email(value){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value||'').trim())},required(value){return String(value||'').trim().length>0},escape(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}};
