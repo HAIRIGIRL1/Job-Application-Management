@@ -1,1 +1,128 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Sign In | Job Applicant Management System</title><link rel="stylesheet" href="styles.css"></head><body class="auth-body"><main class="auth-layout"><section class="auth-brand"><div class="brand"><span class="brand-mark">◆</span><strong>Job Applicant<br>Management System</strong></div><div class="brand-copy"><small>HIRING, SIMPLIFIED</small><h1>Great people.<br>One organized<br>workspace.</h1><p>From the first application to the final offer, keep your hiring process clear, connected, and in control.</p></div><div class="mini-card"><strong>Your next great hire starts here</strong><div class="mini-person"><span>JD</span><div><b>Jordan Davis</b><small>Frontend Developer</small></div><em class="pill pending">Pending</em></div><div class="mini-person"><span>EW</span><div><b>Emma Wilson</b><small>UX/UI Designer</small></div><em class="pill interview">Interview</em></div><div class="mini-person"><span>LC</span><div><b>Liam Chen</b><small>Data Analyst</small></div><em class="pill hired">Hired</em></div></div><small class="secure-note">● Secure access for the HR Admin team</small></section><section class="auth-panel"><div class="auth-top">HR &amp; Admin Portal</div><form id="loginForm" class="auth-form"><h2>Welcome back</h2><p class="muted">Sign in to manage applicants and keep your hiring process moving.</p><label for="email">Email Address</label><input id="email" name="email" type="email" placeholder="Enter your email address" autocomplete="username" required><label for="password">Password</label><input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><div class="form-between"><label class="check-label"><input type="checkbox" id="remember"> Remember me</label><a href="forgot-password.html">Forgot password?</a></div><button class="btn primary full" type="submit">➜ &nbsp; Sign In</button><p id="loginMessage" class="form-message" aria-live="polite"></p><div class="case-note"><b>College IT project · Case study</b><p>A central workspace for applicant records, qualification filters, and hiring summaries. These screens illustrate the journey with sample data.</p></div><a class="center-link" href="mailto:admin@example.com?subject=System%20administrator%20help">Contact your system administrator</a></form><footer>© 2026 Job Applicant Management System</footer></section></main><script src="storage.js"></script><script src="validation.js"></script><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Job Applicant Management System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-body">
+    <main class="auth-layout">
+        <section class="auth-brand">
+            <div class="brand">
+                <span class="brand-mark">◆</span>
+                <strong>Job Applicant<br>Management System</strong>
+            </div>
+
+            <div class="brand-copy">
+                <small>HIRING, SIMPLIFIED</small>
+                <h1>Great people.<br>One organized<br>workspace.</h1>
+                <p>
+                    From the first application to the final offer, keep your hiring
+                    process clear, connected, and in control.
+                </p>
+            </div>
+
+            <div class="mini-card">
+                <strong>Your next great hire starts here</strong>
+
+                <div class="mini-person">
+                    <span>JD</span>
+                    <div>
+                        <b>Jordan Davis</b>
+                        <small>Frontend Developer</small>
+                    </div>
+                    <em class="pill pending">Pending</em>
+                </div>
+
+                <div class="mini-person">
+                    <span>EW</span>
+                    <div>
+                        <b>Emma Wilson</b>
+                        <small>UX/UI Designer</small>
+                    </div>
+                    <em class="pill interview">Interview</em>
+                </div>
+
+                <div class="mini-person">
+                    <span>LC</span>
+                    <div>
+                        <b>Liam Chen</b>
+                        <small>Data Analyst</small>
+                    </div>
+                    <em class="pill hired">Hired</em>
+                </div>
+            </div>
+
+            <small class="secure-note">● Secure access for the HR Admin team</small>
+        </section>
+
+        <section class="auth-panel">
+            <div class="auth-top">HR &amp; Admin Portal</div>
+
+            <form id="loginForm" class="auth-form">
+                <h2>Welcome back</h2>
+                <p class="muted">
+                    Sign in to manage applicants and keep your hiring process moving.
+                </p>
+
+                <label for="email">Email Address</label>
+                <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="Enter your email address"
+                    autocomplete="username"
+                    required
+                >
+
+                <label for="password">Password</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+
+                <div class="form-between">
+                    <label class="check-label">
+                        <input type="checkbox" id="remember">
+                        Remember me
+                    </label>
+                    <a href="forgot-password.html">Forgot password?</a>
+                </div>
+
+                <button class="btn primary full" type="submit">
+                    ➜ &nbsp; Sign In
+                </button>
+
+                <p id="loginMessage" class="form-message" aria-live="polite"></p>
+
+                <div class="case-note">
+                    <b>College IT project · Case study</b>
+                    <p>
+                        A central workspace for applicant records, qualification
+                        filters, and hiring summaries. These screens illustrate
+                        the journey with sample data.
+                    </p>
+                </div>
+
+                <a
+                    class="center-link"
+                    href="mailto:admin@example.com?subject=System%20administrator%20help"
+                >
+                    Contact your system administrator
+                </a>
+            </form>
+
+            <footer>© 2026 Job Applicant Management System</footer>
+        </section>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="validation.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
