@@ -1,4 +1,3 @@
-
 (function () {
     const $ = id => document.getElementById(id);
 
@@ -75,23 +74,17 @@
                 <a
                     class="small-btn"
                     href="applicant-details.html?id=${encodeURIComponent(applicant.id)}"
-                >
-                    View
-                </a>
+                >View</a>
 
                 <a
                     class="small-btn"
                     href="add-applicant.html?id=${encodeURIComponent(applicant.id)}"
-                >
-                    Edit
-                </a>
+                >Edit</a>
 
                 <button
                     class="small-btn delete"
                     data-delete="${safe(applicant.id)}"
-                >
-                    Delete
-                </button>
+                >Delete</button>
             </div>
         `;
     }
@@ -158,9 +151,7 @@
                         <a
                             class="small-btn"
                             href="applicant-details.html?id=${encodeURIComponent(applicant.id)}"
-                        >
-                            View
-                        </a>
+                        >View</a>
                     </td>
                 </tr>
             `).join('')
@@ -256,6 +247,14 @@
                 .slice(0, 10);
         }
 
+        const statusField = $('status');
+
+        if (statusField) {
+            statusField.addEventListener('change', () => {
+                statusField.dataset.changed = 'true';
+            });
+        }
+
         form.addEventListener('submit', event => {
             event.preventDefault();
 
@@ -297,7 +296,7 @@
             } else {
                 const settings = JAMS.getSettings();
 
-                if (!$('status').dataset.changed) {
+                if (!statusField?.dataset.changed) {
                     data.status = settings.defaultStatus || data.status;
                 }
 
@@ -347,16 +346,12 @@
                 </div>
 
                 <div class="details-actions">
-                    <a class="btn secondary" href="applicants.html">
-                        Back
-                    </a>
+                    <a class="btn secondary" href="applicants.html">Back</a>
 
                     <a
                         class="btn primary"
                         href="add-applicant.html?id=${encodeURIComponent(applicant.id)}"
-                    >
-                        Edit applicant
-                    </a>
+                    >Edit applicant</a>
 
                     <button class="btn danger" id="deleteDetail">
                         Delete
@@ -408,21 +403,12 @@
                 <div class="detail-item">
                     <label>Update application status</label>
                     <select id="detailStatus">
-                        <option ${applicant.status === 'Applied' ? 'selected' : ''}>
-                            Applied
-                        </option>
-                        <option ${applicant.status === 'Under Review' ? 'selected' : ''}>
-                            Under Review
-                        </option>
-                        <option ${applicant.status === 'Interview' ? 'selected' : ''}>
-                            Interview
-                        </option>
-                        <option ${applicant.status === 'Hired' ? 'selected' : ''}>
-                            Hired
-                        </option>
-                        <option ${applicant.status === 'Rejected' ? 'selected' : ''}>
-                            Rejected
-                        </option>
+                        ${['Applied', 'Under Review', 'Interview', 'Hired', 'Rejected']
+                            .map(status => `
+                                <option ${applicant.status === status ? 'selected' : ''}>
+                                    ${status}
+                                </option>
+                            `).join('')}
                     </select>
                 </div>
 
@@ -449,7 +435,6 @@
             });
 
             $('statusMessage').textContent = 'Status updated.';
-
             setTimeout(() => location.reload(), 450);
         });
     }
@@ -490,9 +475,7 @@
                         <a
                             class="small-btn"
                             href="applicant-details.html?id=${encodeURIComponent(applicant.id)}"
-                        >
-                            View
-                        </a>
+                        >View</a>
                     </td>
                 </tr>
             `).join('')
@@ -508,6 +491,7 @@
         if (!$('statusReport')) return;
 
         const applicants = all();
+
         const statuses = [
             'Applied',
             'Under Review',
@@ -621,7 +605,6 @@
             ? activities.map(activity => `
                 <article class="notification-item">
                     <span class="stat-icon blue">✓</span>
-
                     <div>
                         <b>${safe(activity.title)}</b>
                         <p>${safe(activity.message)}</p>
@@ -686,16 +669,16 @@
                 'Settings saved successfully.';
         });
 
-        $('resetDemo').addEventListener('click', () => {
-            if (
-                confirm(
+        if ($('resetDemo')) {
+            $('resetDemo').addEventListener('click', () => {
+                if (confirm(
                     'Reset all demo applicant records and settings to the original sample data?'
-                )
-            ) {
-                JAMS.reset();
-                location.reload();
-            }
-        });
+                )) {
+                    JAMS.reset();
+                    location.reload();
+                }
+            });
+        }
     }
 
     function init() {
@@ -777,6 +760,7 @@
                 'filterQualification'
             ].forEach(id => {
                 $(id).addEventListener('change', renderFilter);
+                $(id).addEventListener('input', renderFilter);
             });
 
             renderFilter();
