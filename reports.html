@@ -1,1 +1,72 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Reports | JAMS</title><link rel="stylesheet" href="styles.css"></head><body data-page="reports"><div id="appShell"></div><main class="main"><header class="topbar"><div><span class="eyebrow">ANALYTICS</span><h1>Reports</h1></div><div class="top-actions"><div class="avatar">AD</div><b>Admin</b></div></header><section class="welcome-row"><div><h2>Hiring summary</h2><p class="muted">A quick overview of applicant records and application progress.</p></div><button class="btn secondary" id="exportCsv">↓ Export CSV</button></section><section class="stats-grid"><article class="stat-card"><span class="muted">Total Applicants</span><strong id="reportTotal">0</strong></article><article class="stat-card"><span class="muted">Applied / Under Review</span><strong id="reportPending">0</strong></article><article class="stat-card"><span class="muted">Interviews</span><strong id="reportInterview">0</strong></article><article class="stat-card"><span class="muted">Hired</span><strong id="reportHired">0</strong></article></section><section class="panel"><div class="panel-head"><div><h2>Applicants by status</h2><p class="muted">Counts update when records are changed.</p></div></div><div id="statusReport" class="report-bars"></div></section></main><script src="storage.js"></script><script src="sidebar.js"></script><script src="script.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports | JAMS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="reports">
+    <div id="appShell"></div>
+
+    <main class="main">
+        <header class="topbar">
+            <div>
+                <span class="eyebrow">ANALYTICS</span>
+                <h1>Reports</h1>
+            </div>
+            <div class="top-actions">
+                <div class="avatar">AD</div>
+                <b>Admin</b>
+            </div>
+        </header>
+
+        <section class="welcome-row">
+            <div>
+                <h2>Hiring summary</h2>
+                <p class="muted">
+                    A quick overview of applicant records and application progress.
+                </p>
+            </div>
+            <button class="btn secondary" id="exportCsv">↓ Export CSV</button>
+        </section>
+
+        <section class="stats-grid">
+            <article class="stat-card">
+                <span class="muted">Total Applicants</span>
+                <strong id="reportTotal">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span class="muted">Applied / Under Review</span>
+                <strong id="reportPending">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span class="muted">Interviews</span>
+                <strong id="reportInterview">0</strong>
+            </article>
+
+            <article class="stat-card">
+                <span class="muted">Hired</span>
+                <strong id="reportHired">0</strong>
+            </article>
+        </section>
+
+        <section class="panel">
+            <div class="panel-head">
+                <div>
+                    <h2>Applicants by status</h2>
+                    <p class="muted">Counts update when records are changed.</p>
+                </div>
+            </div>
+
+            <div id="statusReport" class="report-bars"></div>
+        </section>
+    </main>
+
+    <script src="storage.js"></script>
+    <script src="sidebar.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
