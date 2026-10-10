@@ -530,7 +530,7 @@
             applicant => applicant.status === 'Hired'
         ).length;
 
-        $('statusReport').innerHTML = statuses.map(status => {
+        const reportRows = statuses.map(status => {
             const count = applicants.filter(
                 applicant => applicant.status === status
             ).length;
@@ -539,22 +539,25 @@
                 ? Math.round(count / applicants.length * 100)
                 : 0;
 
-            return `
-                <div>
-                    <div class="report-bar-head">
-                        <span>${safe(status)}</span>
-                        <b>${count} (${percentage}%)</b>
-                    </div>
+            return { status, count, percentage };
+        });
 
-                    <div class="bar-track">
-                        <div
-                            class="bar-fill"
-                            style="width: ${percentage}%"
-                        ></div>
-                    </div>
+        $('statusReport').innerHTML = reportRows.map(({ status, count, percentage }) => `
+            <div>
+                <div class="report-bar-head">
+                    <span>${safe(status)}</span>
+                    <b>${count} (${percentage}%)</b>
                 </div>
-            `;
-        }).join('');
+
+                <div class="bar-track">
+                    <div class="bar-fill" data-percentage="${percentage}"></div>
+                </div>
+            </div>
+        `).join('');
+
+        $('statusReport').querySelectorAll('.bar-fill').forEach((bar, index) => {
+            bar.style.width = `${reportRows[index].percentage}%`;
+        });
     }
 
     function exportCsv() {
