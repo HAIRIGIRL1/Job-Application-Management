@@ -1,3 +1,4 @@
+
 (function () {
     const el = document.getElementById('appShell');
     if (!el) return;
@@ -5,7 +6,7 @@
     const page = document.body.dataset.page || 'dashboard';
 
     const links = [
-        ['index.html', '▦', 'Dashboard', 'dashboard'],
+        ['admin.html', '▦', 'Dashboard', 'dashboard'],
         ['applicants.html', '♙', 'Applicants', 'applicants'],
         ['add-applicant.html', '＋', 'Add Applicant', 'add'],
         ['filter.html', '⌕', 'Filter Applicants', 'filter'],
@@ -16,12 +17,9 @@
 
     el.innerHTML = `
         <aside class="sidebar">
-            <a class="brand" href="index.html">
+            <a class="brand" href="admin.html">
                 <span class="brand-mark">◆</span>
-                <strong>
-                    Job Applicant<br>
-                    Management System
-                </strong>
+                <strong>Job Applicant<br>Management System</strong>
             </a>
 
             <div class="side-label">WORKSPACE</div>
