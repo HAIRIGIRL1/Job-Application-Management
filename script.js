@@ -708,7 +708,7 @@
                     'A demo user signed in as ' + email + '.'
                 );
 
-                location.href = 'index.html';
+                location.href = 'admin.html';
             });
         }
 
